@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management System - Cart</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Shopping Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td><img src="{{ url_for('static', filename='uploads/' + item.image_path) }}" alt="{{ item.name }}"></td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td><input type="number" min="1" value="{{ item.quantity }}"></td>
+                    <td>{{ item.total_price }}</td>
+                    <td><a href="/cart/remove/{{ item.id }}">Remove</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <p>Grand Total: {{ grand_total }}</p>
+        </div>
+
+        <a href="checkout.html">Proceed to Checkout</a>
+    </div>
+</body>
+</html>
