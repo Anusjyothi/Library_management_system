@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management System - Maintain Users</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Maintain Users</h2>
+
+        <div>
+            <a href="/admin/add_user">Add User</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>
+                        <a href="./admin/edit_user/{{ user.id }}">Edit</a> | 
+                        <a href="./admin/delete_user/{{ user.id }}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
