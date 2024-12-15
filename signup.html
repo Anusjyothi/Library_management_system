@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management System - Signup</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup</h2>
+        <form action="signup.html" method="post"> 
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+                <option value="user">User</option>
+                <option value="vendor">Vendor</option>
+            </select>
+
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+</body>
+</html>
