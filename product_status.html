@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management System - Product Status</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Product Status</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in requests %}
+                <tr>
+                    <td>{{ request.user_name }}</td>
+                    <td>{{ request.user_email }}</td>
+                    <td>{{ request.address }}</td>
+                    <td>{{ request.status }}</td>
+                    <td><a href="./vendor/update_status/{{ request.id }}">Update</a></td>
+                    <td><a href="./vendor/delete_request/{{ request.id }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
