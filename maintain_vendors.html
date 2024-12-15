@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management System - Maintain Vendors</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Maintain Vendors</h2>
+
+        <div>
+            <a href="/admin/add_vendor">Add Vendor</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vendor in vendors %}
+                <tr>
+                    <td>{{ vendor.name }}</td>
+                    <td>{{ vendor.email }}</td>
+                    <td>{{ vendor.contact }}</td>
+                    <td>
+                        <a href="./admin/edit_vendor/{{ vendor.id }}">Edit</a> | 
+                        <a href="./admin/delete_vendor/{{ vendor.id }}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
