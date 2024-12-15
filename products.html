@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management System - Products</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Products</h2>
+        <div class="product-list">
+            {% for product in products %}
+            <div class="product">
+                <img src="{{ url_for('static', filename='uploads/' + product.image_path) }}" alt="{{ product.name }}">
+                <h4>{{ product.name }}</h4>
+                <p>Price: {{ product.price }}</p>
+                <a href="./vendor/edit_product/{{ product.id }}">Edit</a>
+                <a href="./vendor/delete_product/{{ product.id }}">Delete</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
